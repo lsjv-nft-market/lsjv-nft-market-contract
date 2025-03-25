@@ -18,4 +18,11 @@ interface IEasySwapOrderBook {
         returns (OrderKey[] memory newOrderKeys);
 
     function matchOrder(LibOrder.Order calldata sellOrder, LibOrder.Order calldata buyOrder) external payable;
+
+    //下面是rcc以外的功能
+    function makeOrderDutch(LibOrder.OrderDutch calldata newOrder) external payable returns (OrderKey newOrderKey);
+
+    function buyItNowDutch(OrderKey newOrderKey) external payable;
+
+    // function bidAuction(OrderKey newOrderKey) external payable;
 }
